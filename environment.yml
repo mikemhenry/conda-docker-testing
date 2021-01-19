@@ -1,0 +1,9 @@
+name: test
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pip
+  - nomkl
+  - pip:
+    - pytest
