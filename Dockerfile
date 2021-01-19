@@ -7,4 +7,4 @@ COPY environment.yml ./
 RUN conda env create -f environment.yml && \
     conda clean --all --yes
 
-ENTRYPOINT ["conda", "run", "-n", "test", "/bin/bash", "-c"]
+ENTRYPOINT ["conda", "run", "-n", "test"]
