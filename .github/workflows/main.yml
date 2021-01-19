@@ -19,7 +19,7 @@ jobs:
       run: |
         which -a python
         which conda
-        conda run -n test python -m pytest -v test.py --cov=./ --cov-report=xml
+        conda run -n test python -m pytest -v --cov=./ --cov-report=xml test.py
           
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
