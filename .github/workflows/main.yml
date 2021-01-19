@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container: 
         image: mmh42/conda-docker-testing:v0.0.1
 
