@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+        image: mmh42/conda-docker-testing:v0.0.1
+
+    steps:
+    - uses: actions/checkout@v2
+ 
+    - name: Run pytest with coverage report
+      run: python -m pytest --cov=./ --cov-report=xml
+          
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage.xml
